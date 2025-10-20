@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional-assignment</title>
+
+</head>
+
+
+<body>
+    <center>
+    <h1>Guess any number from 0-9</h1>
+    <input type="text" id="cond">
+    <button onclick="tion()">Press</button>
+    <p id="para"></p>
+    </center>
+</body>
+
+</html>
+<script>
+    function tion() {
+        // let dis = document.getElementById('cond')
+        let dos = document.getElementById('para')
+        // dat = +dis.value.trim()
+        // console.log(dat);
+        // console.log(Math.floor(Math.random() *10));
+        dis = Math.floor(Math.random() * 10)
+        dos.innerHTML = `${dis}`;
+  let userInput = prompt("Enter a number between 0 and 9:");
+
+  let dat = +userInput;
+    let trimmedInput = userInput?.trim();
+
+  let dats = +trimmedInput;
+
+  if (userInput === null || trimmedInput === "" || isNaN(dats)) {
+    dos.innerHTML = `Please enter a number!`;
+    dos.style.color = 'rebeccapurple';
+    dos.style.fontSize = '30px';
+    dos.style.fontWeight = '700';
+  } 
+
+        else if(dat === dis) {
+            dos.innerHTML = `Right! You guessed correctly (number was ${dis})`;
+            dos.style.color = 'black'
+            dos.style.fontSize = '30px'
+            dos.style.fontWeight = '700'
+        }
+        else {
+            dos.innerHTML = `Wrong! Try again (number was ${dis})`;
+            dos.style.color = 'green'
+            dos.style.fontSize = '40px'
+            dos.style.fontWeight = '700'
+
+
+
+
+        }
+
+
+
+
+
+
+
+    }
+</script>
