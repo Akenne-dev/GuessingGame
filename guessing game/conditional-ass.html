@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #e8afb3, #ffc1a3);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            color: #222;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #df2cd0;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px white;
+            background-color: white;
+            border-radius: 20px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid #df2cd0;
+            text-align: center;
+            outline: none;
+        }
+
+        button {
+            background-color: #df2cd0;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #811b9a;
+            transform: scale(1.05);
+        }
+
+        p {
+            font-size: 22px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        main {
+            text-align: center;
+            box-shadow: 0px 0px 10px 0px rgba(2, 0, 0, 0.327);
+            height: 400px;
+            width: 55%;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #score {
+            font-size: 20px;
+            color: #3b1e54;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 8px 15px;
+            border-radius: 12px;
+            font-weight: 600;
+            width: 20%
+        }
+
+        @media (max-width: 970px) {
+            main {
+                width: 85%;
+                height: auto;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                padding: 10px;
+            }
+
+            input {
+                width: 130px;
+                font-size: 16px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            #score {
+                width: 40%;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+                height: 95.7vh;
+
+            }
+            h1 {
+                font-size: 1.2em;
+                border-radius: 8px;
+                background-color: white;
+            }
+
+            input {
+                width: 100px;
+                font-size: 15px;
+            }
+
+            button {
+                font-size: 15px;
+                padding: 8px 14px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            #score {
+                width: 60%;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <h1>💫 Game Time! Test your luck & intuition 💫</h1>
+            <p>Kindly guess a Number from 0-9 👇</p>
+        </div>
+        <p id="score">Score: 0</p>
+
+        <div>
+            <input type="text" id="cond" placeholder="Type here">
+            <button onclick="tion()">Press</button>
+        </div>
+        <p id="para"></p>
+    </main>
+
+    <script>
+        let score = 0
+
+        function tion() {
+            let dos = document.getElementById('para');
+            let userInput = document.getElementById('cond').value;
+            let dis = Math.floor(Math.random() * 10);
+            let trimmedInput = userInput.trim();
+            let dats = +trimmedInput;
+
+            if (trimmedInput === "" || isNaN(dats)) {
+                dos.innerHTML = `⚠️ Please enter a valid number!`;
+                dos.style.color = 'brown';
+                dos.style.fontSize = '28px';
+            }
+            else if (dats === dis) {
+                score++;
+                document.getElementById('score').innerText = `Score: ${score}`
+                dos.innerHTML = `Right! You guessed correctly 😍 (number was ${dis})`;
+                dos.style.color = 'green';
+                dos.style.fontSize = '25px';
+            }
+            else {
+                dos.innerHTML = `❌ Wrong! Try again (number was ${dis})`;
+                dos.style.color = 'red';
+                dos.style.fontSize = '28px';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

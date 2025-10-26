@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional classwork</title>
+</head>
+
+<body>
+    <div>
+        <h1>Check Result</h1>
+        <input type="number" id="amimi" class="anything">
+        <button onclick="jam()">click</button>
+        <h2 id="grab"></h2>
+    </div>
+</body>
+
+</html>
+<script>
+    function jam() {
+        let ami = document.getElementById('amimi').value;
+        ami = Number(ami);
+        let grab = document.getElementById('grab');
+
+        if (ami > 100 || ami < 0) {
+            grab.innerHTML = 'Invalid input sule ❌'
+        }
+        else if (ami >= 80 && ami <= 100) {
+            grab.innerHTML = 'A - Distintion 😍'
+        }
+        else if (ami >= 70 && ami <= 79) {
+            grab.innerHTML = 'B - Good Work 🤭'
+        }
+        else if (ami >= 60 && ami <= 69) {
+            grab.innerHTML = 'C - Credit 🤭'
+        }
+        else if (ami >= 40 && ami <= 59) {
+            grab.innerHTML = 'D - Pass 🤣'
+        }
+        else {
+            grab.innerHTML = 'U no try oooo Oloshi 😒'
+        }
+    }
+</script>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input dataTypes Ass</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            height: 80vh;
+            background-color: pink;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-direction: column;
+        }
+
+        .top-part {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+
+        .search {
+            height: 40px;
+            width: 700px;
+            max-width: 98%;
+            border: 1px solid lightgreen;
+            background-color: lightgreen;
+            width: 700px;
+            max-width: 98%;
+            display: flex;
+            align-items: center;
+            border-radius: 30px;
+            box-shadow: 0 0 10px rgba(106, 159, 19, 0.8);
+
+
+        }
+
+        .search input {
+            outline: none;
+            background-color: transparent;
+            color: black;
+            padding: 0px 0px 0px 0px;
+            flex: 1;
+            border: none;
+            font-size: 18px;
+
+        }
+
+        button {
+            height: 40px;
+            width: 195px;
+            border-radius: 125px;
+            border: 1px solid lightgreen;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0px 0px 0px 40px;
+            background: linear-gradient(to right, #02a7df 0%, #02a7df 7%, #00e1b5 77%, #00e1b5 100%);
+            color: white;
+            font-size: 17px;
+            font-weight: 500;
+            transition: all 1s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        ::placeholder {
+            color: rgb(147, 9, 140);
+            padding-left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="top-part">
+        <div class="search">
+    <input type="text" id="disappear" value="" placeholder="Type a message">
+        </div>
+        <button onclick="display()">Click Here <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#FFFFFF"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></button>
+        </div>
+        <h1 id="textInside"></h1>
+    </section>
+
+                       <!-- first practice
+    <input type="text" id="appear" value="" placeholder="type">
+    <button onclick="play()">touch</button>
+    <h4 id="write"></h4> -->
+
+     <!-- second practice 
+     <input type="text" id="another" value="">
+     <button onclick="press()">press-on</button>
+     <h1 id="jot"></h1> -->
+</body>
+
+</html>
+<script>
+
+
+
+        function display() {
+            // for Input
+      const forInput = document.getElementById('disappear');
+             //   for h1 inside html dom
+      const forH1 = document.getElementById('textInside'); 
+
+      let text = forInput.value.trim();
+      text = text.replaceAll('cunt', 'c**t'); 
+      text = text.replaceAll('bitch', 'bi**h'); 
+      text = text.replaceAll('shit', 's**t'); 
+      text = text.replaceAll('piss', 'p**s'); 
+      text = text.replaceAll('fuck', 'f**k'); 
+      text = text.replaceAll('motherfucker', 'moth***fu****'); 
+      text = text.replaceAll('sucker', 'su**ker'); 
+      text = text.replaceAll('fucking', 'fu****g'); 
+      text = text.replaceAll('hell', 'h*ll'); 
+      text = text.replaceAll('asshole', 'a******');
+      text = text.replaceAll('tit', 't*t');
+      text = text.replaceAll('bastard', 'bas***d');
+      text = text.replaceAll('hello', 'hello');
+
+    text = text.replace(text[0], text[0].toUpperCase());
+
+      forH1.innerHTML = text; 
+      forInput.value = ''
+
+    }
+
+                    //  first func pract
+    // function play() {
+    //     const you = document.getElementById('appear');
+    //     const me = document.getElementById('write');
+    //     let sade = you.value;
+    //     sade = sade.replaceAll('poop', 'p**p');
+    //     me.innerHTML = sade;
+    //     sade.value = ''
+    // }
+
+    //     // second practice
+    // function press() {
+    //     let wendy = document.getElementById('another');
+    //     let tabby = document.getElementById('jot');
+    //     let feranmi = wendy.value
+    //     feranmi = feranmi.replaceAll('kenny', 'k***y').replaceAll(feranmi[0], feranmi[0].toUpperCase());
+    //     tabby.innerHTML = feranmi
+    //     wendy.value = ""
+    // }
+
+</script>
