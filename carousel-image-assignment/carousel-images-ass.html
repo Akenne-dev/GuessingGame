@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carousel images ass</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        section{
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            margin: 15vh auto;
+            border-radius: 7px;
+            height: 480px;
+            justify-content: center;
+            align-items: center;
+        }
+        main{
+            height: 85%;
+            width: 100%;
+            img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+        div{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 15%;
+            gap: 1px;
+        }
+        button{
+            padding: 5px;
+            width: 50%;
+            background-color:yellow;
+            border: 1px solid lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <main>
+            <img id="image" src="" alt="">
+        </main>
+        <div>
+            <button onclick="previous()">Previous</button>
+            <button onclick="next()">Next</button>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+<script>
+    let display = document.getElementById('image')
+
+    let array = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSogLyJs2FdFNPVoHepNdKZL-O8kscaFL1GLg&s', 
+    'https://i.pinimg.com/736x/e3/57/20/e35720ec225335d5f516a8c0b269f30c.jpg', 
+    'https://i.pinimg.com/736x/37/6f/e4/376fe4af2126b5cd7d860ee6099d8e11.jpg', 
+    'https://i.pinimg.com/1200x/89/e0/50/89e050b9f71c20f3f1e58b3d3f2db9c1.jpg', 'https://i.pinimg.com/736x/c7/3d/3a/c73d3a9415ef72d4b6a0d3efe795c4c3.jpg', 
+    'https://i.pinimg.com/736x/de/9d/81/de9d81e31b888076525f3f54e7d8c451.jpg']
+
+    let count = 0
+
+    function next() {
+
+        if (count === array.length - 1) {
+            count = 0
+        } else {
+           count++
+        display.src = array[count] 
+        }
+    }
+
+
+
+    function previous() {
+
+        if (count === 0) {
+            count = array.length - 1
+        } else {
+            count--
+        display.src = array[count]
+        }
+    }
+</script>
