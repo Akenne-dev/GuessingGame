@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Assignment</title>
+    <style>
+        body{
+            position: relative;
+        }
+        button{
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            outline: none;
+            border: none;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body class="body">
+    <button onclick="change()" class="pta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="pdp" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-60h400q75 0 127.5-52.5T860-480q0-75-52.5-127.5T680-660H280q-75 0-127.5 52.5T100-480q0 75 52.5 127.5T280-300Zm-1.06-79q42.06 0 71.56-29.44t29.5-71.5q0-42.06-29.44-71.56t-71.5-29.5q-42.06 0-71.56 29.44t-29.5 71.5q0 42.06 29.44 71.56t71.5 29.5ZM480-480Z"/></svg>
+    </button>
+</body>
+</html>
+<script>
+     function change() {
+        const pdp = document.querySelector('.pdp');
+        pdp.style.fill = 'red';
+
+        const body = document.querySelector('.body');
+
+        if (body.style.background === 'pink') {
+            body.style.background = 'black';
+            
+        } else {
+            body.style.background = 'pink';
+            
+        }
+     }
+</script>
